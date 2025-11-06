@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,19 +7,33 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build", "!.vscode"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
+    "lineWidth": 140
   },
   "linter": {
     "enabled": true,
     "rules": {
+      "correctness": {
+        "useImportExtensions": "off",
+        "noUnusedImports": "error",
+        "useExhaustiveDependencies": "warn",
+        "noUnusedVariables": "error",
+        "noUnusedFunctionParameters": "error"
+      },
+      "a11y": "off",
       "recommended": true,
+      "style": { "noNonNullAssertion": "off" },
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noExplicitAny": "off",
+        "noUnknownAtRules": "off",
+        "useIterableCallbackReturn": "warn",
+        "noArrayIndexKey": "off",
+        "noControlCharactersInRegex": "off"
       }
     },
     "domains": {
@@ -32,6 +46,13 @@
       "source": {
         "organizeImports": "on"
       }
+    }
+  },
+  "css": {
+    "parser": { "tailwindDirectives": true },
+    "formatter": {
+      "enabled": true,
+      "indentWidth": 2
     }
   }
 }

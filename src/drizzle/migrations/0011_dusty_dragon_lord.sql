@@ -1,0 +1,1 @@
+ALTER TABLE "authentication" ADD CONSTRAINT "authentication_provider_unique" UNIQUE("provider");

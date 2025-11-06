@@ -1,0 +1,44 @@
+{
+  "id": "8254ffa1-4005-4426-974e-989fd4a76f70",
+  "prevId": "8b3cd8da-cfe5-4b37-be68-9da2311b1fe4",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.Demo": {
+      "name": "Demo",
+      "schema": "",
+      "columns": {
+        "one": {
+          "name": "one",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "two": {
+          "name": "two",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

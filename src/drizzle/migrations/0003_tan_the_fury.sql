@@ -1,0 +1,1 @@
+ALTER TABLE "Demo" DROP COLUMN "demo_column";

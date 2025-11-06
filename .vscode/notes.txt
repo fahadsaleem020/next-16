@@ -1,0 +1,24 @@
+Task:
+check copilot chat(reduce stale time)
+read cache in docs > guides
+create editor
+
+
+💡Ideas:
+use third party animated components
+use input group for forms
+table of content
+sample article with image
+tags
+categories
+intro(animated guide)
+multiple themes(landing page)
+featured/latest/whiteboard(landing page)
+archieved(sidebar)
+global search
+edit blog > author-settings > title/description/parmalink
+edit blog > settings > disable comments
+thumbnail > multple images(hover effect)
+social identity(social)
+animated contextual menu for selected block
+toolbar style(see saved dribbble shot)
