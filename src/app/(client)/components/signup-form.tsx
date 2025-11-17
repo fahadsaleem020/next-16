@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { init } from "@paralleldrive/cuid2";
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -12,7 +13,7 @@ import { Box } from "@/ui/box";
 import { Button } from "@/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormMessage } from "@/ui/form";
 import { Input } from "@/ui/input";
-import type { FormTypes } from "../layout";
+import type { FormTypes } from "./autb-button";
 
 type WithModal = {
   withModal: true;
@@ -145,9 +146,11 @@ export const SignUpForm = ({ withModal = false, goToStep, setIsOpen }: WithModal
               Sign in
             </Button>
           ) : (
-            <a href="/signin" className="underline">
-              Sign in
-            </a>
+            <Button type="button" variant="link" className="p-0 h-0">
+              <Link href="/signin" className="underline">
+                Sign in
+              </Link>
+            </Button>
           )}
         </Box>
       </form>

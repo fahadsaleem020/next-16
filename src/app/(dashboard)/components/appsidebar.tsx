@@ -23,7 +23,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/ui/sidebar";
-import { Spinner } from "@/ui/spinner";
 
 interface NavData {
   icon?: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -91,7 +90,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 {group.items?.map((menu, key) => (
                   <SidebarMenuItem key={key}>
                     <SidebarMenuButton tooltip={menu.title} asChild isActive={menu.url === pathName}>
-                      <Link href={menu.url!}>
+                      <Link prefetch={menu.url !== "/dashboard/authentication"} href={menu.url!}>
                         {menu.icon && <menu.icon />}
                         {menu.title}
                       </Link>

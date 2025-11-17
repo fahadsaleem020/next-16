@@ -1,6 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { LogOut } from "lucide-react";
 import type * as React from "react";
 import { cn } from "@/utils/cn";
 import { Spinner } from "./spinner";

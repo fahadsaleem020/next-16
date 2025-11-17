@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "dashboard",
 };
 
-export default async function RootLayout({ children }: LayoutProps<"/">) {
+export default async function DashboardLayout({ children }: LayoutProps<"/">) {
   const session = await getSession();
 
   if (session?.user.role !== "admin") redirect("/");

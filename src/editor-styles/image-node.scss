@@ -1,0 +1,101 @@
+.tiptap.ProseMirror {
+  // Image Node
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  > img:not([data-type="emoji"] img) {
+    margin: 2rem 0;
+    outline: 0.125rem solid transparent;
+    border-radius: var(--tt-radius-xs, 0.25rem);
+  }
+
+  img:not([data-type="emoji"] img).ProseMirror-selectednode {
+    outline-color: var(--tt-brand-color-500);
+  }
+
+  // Thread image handling
+  .tiptap-thread:has(> img) {
+    margin: 2rem 0;
+
+    img {
+      outline: 0.125rem solid transparent;
+      border-radius: var(--tt-radius-xs, 0.25rem);
+    }
+  }
+
+  .tiptap-thread img {
+    margin: 0;
+  }
+
+// Youtube Node
+  div[data-youtube-video] {
+  position: relative;
+  transition: all 0.2s ease;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: var(--tt-radius-xs, 0.25rem);
+  margin: 2rem 0;
+  outline: 0.125rem solid transparent;
+  cursor: move;
+
+  &:hover {
+    padding-right: 1.5rem;
+  }
+
+  &::after {
+    content: "Click Here To Select";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: var(--color-blue-50);
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-top-left-radius: var(--tt-radius-xs, 0.25rem);
+    border-bottom-left-radius: var(--tt-radius-xs, 0.25rem);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: inherit;
+      display: block;
+    }
+
+    &.ProseMirror-selectednode {
+      outline-color: var(--tt-brand-color-500);
+    }
+  }
+
+  .tiptap-thread:has(> div[data-youtube-video]) {
+    margin: 2rem 0;
+
+    div[data-youtube-video] {
+      outline: 0.125rem solid transparent;
+      border-radius: var(--tt-radius-xs, 0.25rem);
+    }
+  }
+
+  .tiptap-thread div[data-youtube-video] {
+    margin: 0;
+  }
+}

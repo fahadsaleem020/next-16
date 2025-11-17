@@ -16,6 +16,7 @@ import { Input } from "@/ui/input";
 import { SheetFooter, SheetHeader, SheetTitle } from "@/ui/sheet";
 import { Stack } from "@/ui/stack";
 import { Switch } from "@/ui/switch";
+
 import { authProviders, credentialsFormSchema, type ModalContent } from "./authentication/data";
 
 type CredentialsFormSchemaSchema = z.infer<typeof credentialsFormSchema>;
@@ -29,7 +30,7 @@ export default function CredentialsForm({
   setIsOpenAction: Dispatch<SetStateAction<boolean>>;
   defaultValues: (CredentialsFormSchemaSchema & { id: string }) | undefined;
 }) {
-  const [res, action, isPending] = useActionState(saveAuthCredentials, undefined);
+  const [res, action, isPending] = useActionState(saveAuthCredentials, null);
   const content: Record<Providers, ModalContent> = {
     Twitter: { title: "Twitter", link: "https://www.better-auth.com/docs/authentication/twitter" },
     Google: { title: "Google", link: "https://www.better-auth.com/docs/authentication/google" },
@@ -140,7 +141,7 @@ export default function CredentialsForm({
         </a>
         <SheetFooter className="mt-auto">
           <Button isLoading={isPending}>Submit</Button>
-          <Button onClick={() => setIsOpenAction(false)} variant={"outline"}>
+          <Button type="button" onClick={() => setIsOpenAction(false)} variant={"outline"}>
             Close
           </Button>
         </SheetFooter>

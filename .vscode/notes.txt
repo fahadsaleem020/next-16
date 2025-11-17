@@ -1,7 +1,6 @@
 Task:
-check copilot chat(reduce stale time)
-read cache in docs > guides
 create editor
+read cache in docs > guides
 
 
 💡Ideas:

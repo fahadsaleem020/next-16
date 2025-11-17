@@ -1,15 +1,20 @@
+"use client";
+
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { type FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 import type { UseStepper } from "@/hooks/use-stepper";
 import { authClient } from "@/lib/auth-client";
+import type { Session } from "@/providers/user.provider";
 import { Box } from "@/ui/box";
 import { Button } from "@/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/ui/form";
 import { Input } from "@/ui/input";
-import type { FormTypes } from "../layout";
+import type { FormTypes } from "./autb-button";
 
 type WithModal = {
   withModal: true;
@@ -32,6 +37,7 @@ type SignInSchema = z.infer<typeof signInSchema>;
 
 export const SignInForm: FC<WithModal | WithoutModal> = ({ withModal = false, goToStep, setIsOpen }) => {
   const [isPending, setIsPending] = useState(false);
+  const router = useRouter();
   const form = useForm<SignInSchema>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -48,7 +54,9 @@ export const SignInForm: FC<WithModal | WithoutModal> = ({ withModal = false, go
       },
       {
         onRequest: () => setIsPending(true),
-        onSuccess: () => {
+        onSuccess: (ctx) => {
+          const session = ctx.data as Session;
+          if (session.user.role === "admin") router.push("/dashboard");
           setIsPending(false);
           setIsOpen?.(false);
         },
@@ -103,9 +111,9 @@ export const SignInForm: FC<WithModal | WithoutModal> = ({ withModal = false, go
               Sign up
             </Button>
           ) : (
-            <a href="/signup" className="underline">
-              Sign up
-            </a>
+            <Button type="button" variant="link" className="p-0 h-0">
+              <Link href="/signup">Sign up</Link>
+            </Button>
           )}
         </Box>
       </form>

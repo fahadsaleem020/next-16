@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, KeyRound, Shield } from "lucide-react";
-import { useMemo, useState } from "react";
+import { use, useMemo, useState } from "react";
 import type { Providers } from "@/drizzle/schema/schema";
 import { useStepper } from "@/hooks/use-stepper";
 import { Button } from "@/ui/button";
@@ -30,8 +30,8 @@ type AuthenticationListProps =
       message: string;
     };
 
-export default function AuthenticationList({ awaitedData }: { awaitedData: AuthenticationListProps }) {
-  const { data } = awaitedData;
+export default function AuthenticationList({ awaitedData }: { awaitedData: Promise<AuthenticationListProps> }) {
+  const { data } = use(awaitedData);
   const [isOpen, setIsOpen] = useState(false);
   const { step, goToStep } = useStepper<Providers>(["Google", "GitHub", "Twitter"]);
   const activeProvider = useMemo(() => data?.find((d) => d.provider === step), [step, data]);
@@ -92,6 +92,7 @@ export default function AuthenticationList({ awaitedData }: { awaitedData: Authe
           );
         })}
       </ItemGroup>
+
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent withCloseIcon={false}>
           <Stack className="bg-background h-full shadow-lg rounded-xl border">

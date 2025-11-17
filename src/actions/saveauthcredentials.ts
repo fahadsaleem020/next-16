@@ -1,7 +1,7 @@
 "use server";
 import "server-only";
 
-import { refresh, revalidatePath, revalidateTag, updateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { z } from "zod";
 import { credentialsFormSchema } from "@/app/(dashboard)/components/authentication/data";
 import { database } from "@/drizzle/connection/database";
@@ -20,7 +20,7 @@ export async function saveAuthCredentials(_initialState: unknown, formData: Form
     clientSecret: formData.get("clientSecret") as string | undefined,
     provider: formData.get("provider") as Providers | undefined,
     clientId: formData.get("clientId") as string | undefined,
-    enabled: (formData.get("enabled") as string) === "true" ? true : false,
+    enabled: (formData.get("enabled") as string) === "true",
   };
 
   const validatedFields = credentialsFormSchema.safeParse(values);
@@ -42,10 +42,6 @@ export async function saveAuthCredentials(_initialState: unknown, formData: Form
 
   if (res.rowCount) {
     updateTag("auth-creds");
-    revalidatePath("/dashboard/authentication");
-    revalidateTag("auth-creds", { expire: 300 });
-    refresh();
-
     return { message: `Record added for ${validatedFields.data.provider}.` };
   }
 

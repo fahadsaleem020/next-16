@@ -1,0 +1,228 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "heading",
+      "attrs": {
+        "textAlign": null,
+        "level": 1
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Introducing the Enhanced Editor"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "attrs": {
+        "textAlign": null
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Welcome to the "
+        },
+        {
+          "type": "text",
+          "marks": [
+            { "type": "italic" },
+            {
+              "type": "highlight",
+              "attrs": { "color": "var(--tt-color-highlight-blue)" }
+            }
+          ],
+          "text": "Rich Text Editor"
+        },
+        {
+          "type": "text",
+          "text": " — a modern, open-source project built on top of "
+        },
+        {
+          "type": "text",
+          "marks": [{ "type": "bold" }],
+          "text": "Tiptap UI Components"
+        },
+        {
+          "type": "text",
+          "text": " with seamless AI and media integration."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "attrs": { "textAlign": null },
+      "content": [
+        {
+          "type": "text",
+          "text": "This project demonstrates how to combine a powerful rich text editor with image fetching from "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://www.pexels.com/api/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ],
+          "text": "Pexels API"
+        },
+        {
+          "type": "text",
+          "text": " and AI-driven content generation using modern web tooling."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "textAlign": null, "level": 2 },
+      "content": [{ "type": "text", "text": "Core Features" }]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "AI Assistance" },
+                { "type": "text", "text": " — generate or refine content using integrated AI tools." }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Pexels Integration" },
+                { "type": "text", "text": " — search and insert royalty-free images directly into the editor." }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Tiptap Extensions" },
+                { "type": "text", "text": " — includes markdown shortcuts, code blocks, and task lists." }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [
+                { "type": "text", "marks": [{ "type": "bold" }], "text": "Light & Dark Themes" },
+                { "type": "text", "text": " — fully customizable with CSS variables and Tailwind colors." }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "textAlign": null, "level": 2 },
+      "content": [{ "type": "text", "text": "Open Source & Extensible" }]
+    },
+    {
+      "type": "paragraph",
+      "attrs": { "textAlign": null },
+      "content": [
+        {
+          "type": "text",
+          "text": "This editor is built with a modular architecture — easily extend it with your own custom extensions, actions, or integrations."
+        }
+      ]
+    },
+    {
+      "type": "blockquote",
+      "content": [
+        {
+          "type": "paragraph",
+          "attrs": { "textAlign": null },
+          "content": [
+            { "type": "text", "marks": [{ "type": "italic" }], "text": "Freedom to create. Power to extend. Simplicity to enjoy." }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "attrs": { "textAlign": "left" },
+      "content": [
+        { "type": "text", "marks": [{ "type": "italic" }], "text": "→ " },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://tiptap.dev/docs/ui-components/getting-started/overview",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow"
+              }
+            }
+          ],
+          "text": "Learn more about Tiptap UI Components"
+        }
+      ]
+    },
+    { "type": "horizontalRule" },
+    {
+      "type": "heading",
+      "attrs": { "textAlign": "left", "level": 2 },
+      "content": [{ "type": "text", "text": "Try it out" }]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [{ "type": "text", "text": "Install and launch the editor" }]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "attrs": { "textAlign": "left" },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Experiment with AI content generation and image search with pexels"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

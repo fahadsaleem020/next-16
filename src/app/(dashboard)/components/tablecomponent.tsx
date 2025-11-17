@@ -1,7 +1,7 @@
 "use client";
 
 import { type CellContext, flexRender, type Header, type HeaderContext } from "@tanstack/react-table";
-import { AlertCircleIcon, ArrowDownNarrowWide, ArrowDownWideNarrow, Search } from "lucide-react";
+import { AlertCircleIcon, ArrowDownNarrowWide, ArrowDownWideNarrow } from "lucide-react";
 import { type FC, forwardRef, memo, useEffect, useState } from "react";
 import { PiCaretUpDownFill } from "react-icons/pi";
 import { useDebounceCallback, useIntersectionObserver } from "usehooks-ts";
@@ -148,7 +148,7 @@ const TableComponent: FC<
 export const SortedHeader: FC<{ header: Header<any, any>; label: string }> = ({ header, label }) => {
   return (
     <Flex
-      className="cursor-pointer items-center text-slate-600 font-semibold capitalize w-fit"
+      className="cursor-pointer items-center text-muted-foreground font-semibold capitalize w-fit"
       onClick={() => header.column.toggleSorting()}
     >
       {label}
@@ -203,7 +203,7 @@ export const DebouncedInput = forwardRef<HTMLInputElement, DebouncedInputProps>(
         setValue(value);
         narrow();
       }
-    }, [value]);
+    }, [value, onChange, narrow]);
 
     return (
       <Input

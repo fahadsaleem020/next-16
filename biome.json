@@ -23,7 +23,8 @@
         "noUnusedImports": "error",
         "useExhaustiveDependencies": "warn",
         "noUnusedVariables": "error",
-        "noUnusedFunctionParameters": "error"
+        "noUnusedFunctionParameters": "error",
+        "noUnknownProperty": "off"
       },
       "a11y": "off",
       "recommended": true,

@@ -38,7 +38,7 @@ export default function BlogsTable() {
         tags: faker.helpers.arrayElements(["React", "Next.js", "TypeScript", "JavaScript", "CSS", "HTML", "Node.js"], { min: 1, max: 3 }),
         createdAt: faker.date.past().toISOString(),
         updatedAt: faker.date.recent().toISOString(),
-        publishedAt: faker.datatype.boolean(0.7) ? faker.date.recent().toISOString() : undefined,
+        publishedAt: faker.date.recent().toISOString(),
         views: faker.number.int({ min: 0, max: 1000 }),
         bookmarks: faker.number.int({ min: 0, max: 100 }),
         comments: faker.number.int({ min: 0, max: 50 }),
@@ -57,8 +57,8 @@ export default function BlogsTable() {
         header: ({ header }) => <SortedHeader header={header} label="Title" />,
         cell: ({ row }) => (
           <Stack className="max-w-[300px]">
-            <p className="font-medium text-slate-900 truncate">{row.getValue("title")}</p>
-            <p className="text-sm text-slate-500">/{row.original.slug}</p>
+            <p className="font-medium text-primary truncate">{row.getValue("title")}</p>
+            <p className="text-sm text-muted-foreground">/{row.original.slug}</p>
           </Stack>
         ),
       },
@@ -78,15 +78,15 @@ export default function BlogsTable() {
       {
         accessorKey: "author",
         header: ({ header }) => <SortedHeader header={header} label="Author" />,
-        cell: ({ row }) => <span className="text-slate-700">{row.getValue("author")}</span>,
+        cell: ({ row }) => <span className="text-muted-foreground">{row.getValue("author")}</span>,
       },
       {
         accessorKey: "tags",
-        header: "Tags",
+        header: () => <p className="text-muted-foreground font-semibold">Tags</p>,
         cell: ({ row }) => (
           <Flex className="flex-wrap gap-1 max-w-[200px]">
             {row.original.tags.map((tag, index) => (
-              <Badge key={index} variant="secondary" className="text-xs">
+              <Badge key={index} variant="secondary" className="text-xs font-normal">
                 {tag}
               </Badge>
             ))}
@@ -96,40 +96,44 @@ export default function BlogsTable() {
       {
         accessorKey: "views",
         header: ({ header }) => <SortedHeader header={header} label="Views" />,
-        cell: ({ row }) => <span className="text-slate-600 font-medium">{row.getValue("views")}</span>,
+        cell: ({ row }) => <span className="text-muted-foreground font-medium">{row.getValue("views")}</span>,
       },
       {
         accessorKey: "bookmarks",
         header: ({ header }) => <SortedHeader header={header} label="Bookmarks" />,
-        cell: ({ row }) => <span className="text-slate-600 font-medium">{row.getValue("bookmarks")}</span>,
+        cell: ({ row }) => <span className="text-muted-foreground font-medium">{row.getValue("bookmarks")}</span>,
       },
       {
         accessorKey: "comments",
         header: ({ header }) => <SortedHeader header={header} label="Comments" />,
-        cell: ({ row }) => <span className="text-slate-600 font-medium">{row.getValue("comments")}</span>,
+        cell: ({ row }) => <span className="text-muted-foreground font-medium">{row.getValue("comments")}</span>,
       },
       {
         accessorKey: "createdAt",
         header: ({ header }) => <SortedHeader header={header} label="Created" />,
-        cell: ({ row }) => <span className="text-slate-600 text-sm">{format(new Date(row.getValue("createdAt")), "MMM dd, yyyy")}</span>,
+        cell: ({ row }) => (
+          <span className="text-muted-foreground text-sm">{format(new Date(row.getValue("createdAt")), "MMM dd, yyyy")}</span>
+        ),
       },
       {
         accessorKey: "updatedAt",
         header: ({ header }) => <SortedHeader header={header} label="Updated" />,
-        cell: ({ row }) => <span className="text-slate-600 text-sm">{format(new Date(row.getValue("updatedAt")), "MMM dd, yyyy")}</span>,
+        cell: ({ row }) => (
+          <span className="text-muted-foreground text-sm">{format(new Date(row.getValue("updatedAt")), "MMM dd, yyyy")}</span>
+        ),
       },
       {
         accessorKey: "publishedAt",
         header: ({ header }) => <SortedHeader header={header} label="Published" />,
         cell: ({ row }) => {
           const publishedAt = row.getValue("publishedAt") as string | undefined;
-          return <span className="text-slate-600 text-sm">{publishedAt ? format(new Date(publishedAt), "MMM dd, yyyy") : "-"}</span>;
+          return <span className="text-muted-foreground text-sm">{publishedAt ? format(new Date(publishedAt), "MMM dd, yyyy") : "-"}</span>;
         },
       },
       {
         id: "actions",
-        header: "Actions",
-        cell: ({ row }) => (
+        header: () => <p className="text-muted-foreground font-semibold">Actions</p>,
+        cell: () => (
           <Flex className="gap-2">
             <Button size="sm" variant="outline">
               Edit
@@ -141,7 +145,7 @@ export default function BlogsTable() {
         ),
       },
     ],
-    [data],
+    [],
   );
 
   return (
