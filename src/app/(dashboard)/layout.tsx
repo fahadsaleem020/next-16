@@ -17,7 +17,7 @@ export default async function DashboardLayout({ children }: LayoutProps<"/">) {
 
   return (
     <UserProvider initialSession={session}>
-      <SidebarProvider className="h-screen">
+      <SidebarProvider defaultOpen={false} className="h-screen">
         <AppSidebar />
         <SidebarInset className="overflow-hidden">
           <AppSidebarHeaer />

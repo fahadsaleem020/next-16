@@ -2,11 +2,11 @@
 
 import NextError from "next/error";
 import { useEffect } from "react";
-import { sentry } from "@/lib/sentry";
+// import { sentry } from "@/lib/sentry";
 
 export default function GlobalError({ error }: { error: Error & { digest?: string } }) {
   useEffect(() => {
-    sentry().captureException(error);
+    // sentry().captureException(error);
   }, [error]);
 
   return (

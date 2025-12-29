@@ -1,8 +1,8 @@
 .tiptap.ProseMirror {
-  --blockquote-bg-color: var(--color-gray-900);
+  --blockquote-bg-color: oklch(21% 0.034 264.665);
 
   .dark & {
-    --blockquote-bg-color: var(--color-gray-700);
+    --blockquote-bg-color: oklch(37.3% 0.034 259.733);
   }
 }
 

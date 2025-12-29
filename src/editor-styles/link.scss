@@ -1,0 +1,20 @@
+.tiptap {
+  a:first-child {
+    margin-top: 0;
+  }
+  a {text-decoration: underline !important; }
+}
+
+  
+
+.theme-dark  {
+    a {
+        color: oklch(70.7% 0.165 254.624);
+    }
+}
+
+.theme-light  {
+    a {
+        color: oklch(62.3% 0.214 259.815);
+    }
+}

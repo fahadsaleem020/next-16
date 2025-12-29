@@ -30,19 +30,19 @@
             { "type": "italic" },
             {
               "type": "highlight",
-              "attrs": { "color": "var(--tt-color-highlight-blue)" }
+              "attrs": { "color": "#ca8a04" }
             }
           ],
           "text": "Rich Text Editor"
         },
         {
           "type": "text",
-          "text": " — a modern, open-source project built on top of "
+          "text": " — built with "
         },
         {
           "type": "text",
           "marks": [{ "type": "bold" }],
-          "text": "Tiptap UI Components"
+          "text": "Tiptap"
         },
         {
           "type": "text",
@@ -185,42 +185,6 @@
             }
           ],
           "text": "Learn more about Tiptap UI Components"
-        }
-      ]
-    },
-    { "type": "horizontalRule" },
-    {
-      "type": "heading",
-      "attrs": { "textAlign": "left", "level": 2 },
-      "content": [{ "type": "text", "text": "Try it out" }]
-    },
-    {
-      "type": "bulletList",
-      "content": [
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "attrs": { "textAlign": "left" },
-              "content": [{ "type": "text", "text": "Install and launch the editor" }]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "content": [
-            {
-              "type": "paragraph",
-              "attrs": { "textAlign": "left" },
-              "content": [
-                {
-                  "type": "text",
-                  "text": "Experiment with AI content generation and image search with pexels"
-                }
-              ]
-            }
-          ]
         }
       ]
     }

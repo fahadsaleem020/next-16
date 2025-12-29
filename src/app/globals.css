@@ -54,14 +54,18 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  /* blue-500 */
+  --primary: oklch(62.3% 0.214 259.815);
+  /* blue-100 */
+  --primary-foreground: oklch(93.2% 0.032 255.585);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* blue-100 */
+  --accent: oklch(93.2% 0.032 255.585);
+  /* blue-500 */
+  --accent-foreground: oklch(62.3% 0.214 259.815);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -79,14 +83,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
-  /* code block */
-  --tt-inline-code-bg-color: var(--color-gray-100);
-  --tt-inline-code-text-color: var(--color-gray-700);
-  --tt-inline-code-border-color: var(--color-gray-200);
-  --tt-codeblock-bg: var(--color-gray-50);
-  --tt-codeblock-text: var(--color-gray-800);
-  --tt-codeblock-border: var(--color-gray-200);
 }
 
 .dark {
@@ -96,8 +92,10 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  /* blue-300 */
+  --primary: oklch(80.9% 0.105 251.813);
+  /* blue-900 */
+  --primary-foreground: oklch(37.9% 0.146 265.522);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -121,14 +119,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-
-  /* code block */
-  --tt-inline-code-bg-color: oklch(0.18 0.02 25);
-  --tt-inline-code-text-color: oklch(0.85 0.05 85);
-  --tt-codeblock-bg: oklch(0.12 0.01 25);
-  --tt-codeblock-text: oklch(0.95 0.01 25);
-  --tt-inline-code-border-color: oklch(0.3 0 0);
-  --tt-codeblock-border: oklch(0.3 0 0);
 }
 
 @layer base {

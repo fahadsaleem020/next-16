@@ -1,36 +1,55 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import type { PhotosWithTotalResults } from "pexels";
+import type { PhotosWithTotalResults, Videos } from "pexels";
 import * as pexels from "pexels";
 
 const client = pexels.createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY!);
+export type Type = "image" | "video";
 
 interface PexelsQueryParams {
+  type?: Type;
   perPage?: number;
   enabled: boolean;
   query: string;
 }
 
-export const usePexels = ({ query, perPage = 15, enabled = false }: PexelsQueryParams) => {
+interface Response extends Omit<PhotosWithTotalResults, "photos">, Omit<Videos, "videos"> {
+  videos?: pexels.Video;
+  photos?: pexels.Photo;
+}
+
+export const usePexels = ({ query, perPage = 15, enabled = false, type = "image" }: PexelsQueryParams) => {
   return useInfiniteQuery({
     enabled,
-    queryKey: ["pexels", query],
+    queryKey: ["pexels", type, query],
     queryFn: async ({ pageParam = 1 }) => {
-      const response = (await client.photos.search({
-        query,
-        per_page: perPage,
-        page: pageParam,
-      })) as PhotosWithTotalResults;
-
-      return {
-        ...response,
-        page: pageParam,
-      };
+      if (type === "video") {
+        const response = (await client.videos.search({
+          query,
+          per_page: perPage,
+          page: pageParam,
+        })) as unknown as Response;
+        return {
+          ...response,
+          page: pageParam,
+        };
+      } else {
+        const response = (await client.photos.search({
+          query,
+          per_page: perPage,
+          page: pageParam,
+        })) as unknown as Response;
+        return {
+          ...response,
+          page: pageParam,
+        };
+      }
     },
     getNextPageParam: (lastPage) => {
       const nextPage = lastPage.page + 1;
-      const maxPages = Math.ceil((lastPage as PhotosWithTotalResults).total_results / (lastPage as PhotosWithTotalResults).per_page);
+      const maxPages = Math.ceil((lastPage.total_results as number) / (lastPage.per_page as number));
       return nextPage <= maxPages ? nextPage : undefined;
     },
     initialPageParam: 1,
+    refetchOnWindowFocus: false,
   });
 };

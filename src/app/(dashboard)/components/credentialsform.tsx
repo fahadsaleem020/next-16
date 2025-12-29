@@ -122,7 +122,7 @@ export default function CredentialsForm({
                 <Flex className="py-3">
                   <FormLabel className="flex-1">{value ? "Enabled" : "Disabled"}</FormLabel>
                   <FormControl>
-                    <Switch className={value ? "bg-blue-500!" : undefined} checked={value} onCheckedChange={(c) => onChange(c)} {...rest} />
+                    <Switch checked={value} onCheckedChange={(c) => onChange(c)} {...rest} />
                   </FormControl>
                 </Flex>
                 <FormMessage />

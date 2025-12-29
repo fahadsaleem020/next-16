@@ -35,7 +35,8 @@
         "useIterableCallbackReturn": "warn",
         "noArrayIndexKey": "off",
         "noControlCharactersInRegex": "off"
-      }
+      },
+      "security": { "noDangerouslySetInnerHtml": "warn" }
     },
     "domains": {
       "next": "recommended",

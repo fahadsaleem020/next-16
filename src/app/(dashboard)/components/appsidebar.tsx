@@ -1,6 +1,6 @@
 "use client";
 
-import { BookText, CircleGauge, KeyRound, LogOut, NotebookPen, Sparkles } from "lucide-react";
+import { BookText, CircleGauge, KeyRound, LogOut, NotebookPen } from "lucide-react";
 import Link from "next/link";
 
 type Routes = Parameters<typeof Link>[0]["href"];
@@ -10,7 +10,6 @@ import * as React from "react";
 import { toast } from "sonner";
 import { Logo } from "@/app/shared-components/logo";
 import { authClient } from "@/lib/auth-client";
-import { Button } from "@/ui/button";
 import {
   Sidebar,
   SidebarContent,
@@ -53,17 +52,12 @@ const navData: NavData[] = [
     ],
   },
   {
-    title: "Integrations",
+    title: "Settings",
     items: [
       {
-        title: "Authentication",
+        title: "Authentication Providers",
         url: "/dashboard/authentication",
         icon: KeyRound,
-      },
-      {
-        title: "OpenAI",
-        url: "/dashboard/openai",
-        icon: Sparkles,
       },
     ],
   },
@@ -103,26 +97,30 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <SidebarFooter>
-        <Button
-          disabled={isLoading}
-          onClick={() =>
-            authClient.signOut({
-              fetchOptions: {
-                onRequest: () => {
-                  setIsLoading(true);
-                },
-                onError: (ctx) => {
-                  toast.error(ctx.error.message);
-                  setIsLoading(false);
-                },
-                onSuccess: () => router.refresh(),
-              },
-            })
-          }
-        >
-          {!isLoading && <LogOut />}
-          logout
-        </Button>
+        <SidebarMenu>
+          <SidebarMenuItem className="border rounded-md">
+            <SidebarMenuButton
+              disabled={isLoading}
+              onClick={() =>
+                authClient.signOut({
+                  fetchOptions: {
+                    onRequest: () => {
+                      setIsLoading(true);
+                    },
+                    onError: (ctx) => {
+                      toast.error(ctx.error.message);
+                      setIsLoading(false);
+                    },
+                    onSuccess: () => router.refresh(),
+                  },
+                })
+              }
+            >
+              <LogOut />
+              logout
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
   );

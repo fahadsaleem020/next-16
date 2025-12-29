@@ -1,0 +1,194 @@
+.theme-dark {
+
+  pre {
+    background: oklch(0.205 0 0); /* One Dark Pro background */
+    border-radius: 0.5rem;
+    color: #abb2bf; /* default foreground */
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+
+    /* --------------------------------------- */
+    /* ONE DARK PRO COLORS (Highlight.js)      */
+    /* --------------------------------------- */
+
+    /* Comments */
+    .hljs-comment,
+    .hljs-quote {
+      color: #5c6370;
+      font-style: italic;
+    }
+
+    /* Keywords, operators */
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-built_in,
+    .hljs-type {
+      color: #c678dd;
+    }
+
+    /* Functions, methods */
+    .hljs-function .hljs-title,
+    .hljs-title,
+    .hljs-section,
+    .hljs-name {
+      color: #61afef;
+    }
+
+    /* Strings, inserted */
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition {
+      color: #98c379;
+    }
+
+    /* Numbers, constants, attributes */
+    .hljs-number,
+    .hljs-attribute,
+    .hljs-attr,
+    .hljs-meta,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-params {
+      color: #d19a66;
+    }
+
+    /* Class names and properties */
+    .hljs-class,
+    .hljs-class .hljs-title,
+    .hljs-property,
+    .hljs-attr-name {
+      color: #e5c07b;
+    }
+
+    /* Tags, deletions, important stuff */
+    .hljs-tag,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-regexp,
+    .hljs-link,
+    .hljs-deletion {
+      color: #e06c75;
+    }
+
+    /* Emphasis & strong */
+    .hljs-emphasis {
+      font-style: italic;
+    }
+    .hljs-strong {
+      font-weight: bold;
+    }
+  }
+
+}
+
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+}
+
+.theme-light {
+
+  pre {
+    background: #fafafa; /* One Light background */
+    border-radius: 0.5rem;
+    color: #383a42; /* default text */
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+    border: 1px solid oklch(96.7% 0.003 264.542);
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+
+    /* --------------------------------------- */
+    /* ONE LIGHT COLORS (Highlight.js)         */
+    /* --------------------------------------- */
+
+    /* Comments */
+    .hljs-comment,
+    .hljs-quote {
+      color: #a0a1a7;
+      font-style: italic;
+    }
+
+    /* Keywords & operators */
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-built_in,
+    .hljs-type {
+      color: #a626a4;
+    }
+
+    /* Functions, methods */
+    .hljs-function .hljs-title,
+    .hljs-title,
+    .hljs-section,
+    .hljs-name {
+      color: #4078f2;
+    }
+
+    /* Strings */
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition {
+      color: #50a14f;
+    }
+
+    /* Numbers, constants, attributes */
+    .hljs-number,
+    .hljs-attribute,
+    .hljs-attr,
+    .hljs-meta,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-params {
+      color: #986801;
+    }
+
+    /* Class names & properties */
+    .hljs-class,
+    .hljs-class .hljs-title,
+    .hljs-property,
+    .hljs-attr-name {
+      color: #c18401;
+    }
+
+    /* Tags, deletions, important */
+    .hljs-tag,
+    .hljs-selector-id,
+    .hljs-selector-class,
+    .hljs-regexp,
+    .hljs-link,
+    .hljs-deletion {
+      color: #e45649;
+    }
+
+    /* Emphasis & strong */
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: bold;
+    }
+  }
+}

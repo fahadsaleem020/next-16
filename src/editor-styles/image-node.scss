@@ -1,32 +1,35 @@
 .tiptap.ProseMirror {
-  // Image Node
-  img {
-    max-width: 100%;
+  // Image and Video Node
+  img, video {
+    width: 100%;
     height: auto;
     display: block;
   }
-
-  > img:not([data-type="emoji"] img) {
-    margin: 2rem 0;
-    outline: 0.125rem solid transparent;
-    border-radius: var(--tt-radius-xs, 0.25rem);
+  video {
+    max-height: 30rem;
   }
 
-  img:not([data-type="emoji"] img).ProseMirror-selectednode {
-    outline-color: var(--tt-brand-color-500);
+  > img:not([data-type="emoji"] img), video {
+    margin: 2rem 0;
+    outline: 0.125rem solid transparent;
+    border-radius: 1rem;
+  }
+
+  img:not([data-type="emoji"] img).ProseMirror-selectednode, video.ProseMirror-selectednode {
+    outline-color: oklch(70.7% 0.165 254.624);
   }
 
   // Thread image handling
-  .tiptap-thread:has(> img) {
+  .tiptap-thread:has(> img), .tiptap-thread:has(> video) {
     margin: 2rem 0;
 
-    img {
+    img, video {
       outline: 0.125rem solid transparent;
-      border-radius: var(--tt-radius-xs, 0.25rem);
+      border-radius: 1rem;
     }
   }
 
-  .tiptap-thread img {
+  .tiptap-thread img, .tiptap-thread video {
     margin: 0;
   }
 
@@ -38,7 +41,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   display: block;
-  border-radius: var(--tt-radius-xs, 0.25rem);
+  border-radius: 1rem;
   margin: 2rem 0;
   outline: 0.125rem solid transparent;
   cursor: move;
@@ -48,7 +51,7 @@
   }
 
   &::after {
-    content: "Click Here To Select";
+    content: "👇 Click Here To Select";
     position: absolute;
     top: 0;
     right: 0;
@@ -65,8 +68,8 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease;
-    border-top-left-radius: var(--tt-radius-xs, 0.25rem);
-    border-bottom-left-radius: var(--tt-radius-xs, 0.25rem);
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
   }
 
   &:hover::after {
@@ -82,7 +85,7 @@
     }
 
     &.ProseMirror-selectednode {
-      outline-color: var(--tt-brand-color-500);
+      outline-color: oklch(70.7% 0.165 254.624);
     }
   }
 
@@ -91,7 +94,7 @@
 
     div[data-youtube-video] {
       outline: 0.125rem solid transparent;
-      border-radius: var(--tt-radius-xs, 0.25rem);
+      border-radius: 0.25rem;
     }
   }
 

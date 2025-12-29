@@ -88,7 +88,7 @@ export const articles = pgTable("articles", {
   title: text("title").notNull(),
   summary: text("summary"),
   contentJSON: jsonb("content_json"),
-  slug: text("slug").notNull().unique(),
+  permalink: text("permalink").notNull().unique(),
   coverImageUrl: text("cover_image_url"),
   views: integer("views").default(0).notNull(),
   status: articleStatusEnum("status").default("DRAFT").notNull(),
@@ -97,6 +97,7 @@ export const articles = pgTable("articles", {
 
 export const articlesrelations = relations(articles, ({ many }) => ({
   tags: many(tags),
+  coments: many(articlesToTags),
 }));
 
 export const tags = pgTable("tags", {
